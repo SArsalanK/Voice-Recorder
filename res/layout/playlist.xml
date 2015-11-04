@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".11"
+            android:background="@drawable/header_play_list" >
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/icon_back_play_list" >
+            </ImageButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".89" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <!-- <RelativeLayout -->
+                <!-- android:id="@+id/rl_visualizer" -->
+                <!-- android:layout_width="match_parent" -->
+                <!-- android:layout_height="match_parent" > -->
+
+
+                <!-- <com.verox.voicerecorder.VisualizerView -->
+                <!-- android:id="@+id/visualizerView" -->
+                <!-- android:layout_width="fill_parent" -->
+                <!-- android:layout_height="match_parent" -->
+                <!-- android:layout_centerInParent="true" > -->
+                <!-- </com.verox.voicerecorder.VisualizerView> -->
+                <!-- </RelativeLayout> -->
+
+                <ListView
+                    android:id="@+id/playlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@+id/rl_visualizer"
+                    android:listSelector="@drawable/bkg" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/record_player_bg"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/songTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:gravity="center"
+                android:text="Song Title.3gpp"
+                android:textColor="@android:color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp" >
+
+                <SeekBar
+                    android:id="@+id/audioProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/total_time"
+                    android:layout_toRightOf="@+id/current_time"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:secondaryProgress="0" />
+
+                <TextView
+                    android:id="@+id/total_time"
+                    android:layout_width="55dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="15dip"
+                    android:gravity="left"
+                    android:text="00:00:00"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/current_time"
+                    android:layout_width="55dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="right"
+                    android:text="00:00:00"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:gravity="center_horizontal" >
+
+                <!-- <Button -->
+                <!-- android:id="@+id/pause" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:background="@drawable/record_player_pause" /> -->
+
+                <Button
+                    android:id="@+id/play_pause_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/record_player_play" />
+
+                <Button
+                    android:id="@+id/stop_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/play_pause_btn"
+                    android:background="@drawable/record_player_stop" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
